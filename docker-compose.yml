@@ -1,0 +1,33 @@
+version: '3.5'
+
+services:
+
+  nginx:
+    image: nginx
+    container_name: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "80:80"
+
+  legacy-app:
+    build: ./angular-legacy-app
+    container_name: angular-legacy-app
+    ports:
+      - "8001:80"
+      - "80"
+
+  legacy-app2:
+    build: ./angular-legacy-app2
+    container_name: angular-legacy-app2
+    ports:
+      - "8002:80"
+      - "80"
+
+  new-app:
+    build: ./angular-new-app
+    container_name: angular-new-app
+    ports:
+      - "8003:80"
+      - "80"
+  
