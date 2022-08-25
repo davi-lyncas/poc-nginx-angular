@@ -17,17 +17,10 @@ services:
       - "8001:80"
       - "80"
 
-  legacy-app2:
-    build: ./angular-legacy-app2
-    container_name: angular-legacy-app2
-    ports:
-      - "8002:80"
-      - "80"
-
   new-app:
     build: ./angular-new-app
     container_name: angular-new-app
     ports:
-      - "8003:80"
+      - "8002:80"
       - "80"
   
