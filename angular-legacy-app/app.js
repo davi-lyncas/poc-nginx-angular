@@ -22,19 +22,8 @@ sampleApp.controller('LoginController', function($scope, $location, $window) {
   };
   
   $scope.goToDashboard = function() {
-    var urlToRedirect = 'http://localhost/Dashboard';
-    $window.location.href = urlToRedirect;
-
-    // var urlToRedirect = 'http://' + ($location.absUrl().split('/')[2]) + '/' + 'Dashboard';
-
-    // console.log(urlToRedirect);
-    // console.log($location.absUrl());
-    // console.log($location.url);
-    // console.log($window.location.href);
-
-    // $window.location.href = urlToRedirect;
-    // $window.location.reload(true);
-    
+    // $window.location.href = 'http://localhost/Dashboard'; // <-- It does not work
+    window.location.href = 'http://localhost/dashboard';
   }
 });
 
