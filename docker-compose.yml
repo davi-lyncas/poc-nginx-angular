@@ -18,7 +18,7 @@ services:
       - "80"
 
   new-app:
-    build: ./angular-new-app
+    build: ./angular
     container_name: angular-new-app
     ports:
       - "8002:80"
