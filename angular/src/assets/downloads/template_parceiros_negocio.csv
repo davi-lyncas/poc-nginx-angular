@@ -1,0 +1,14 @@
+NomeParceiroNegocio;CodigoReferencia;NomeParceiroNegocioPai
+Parceiro 1;COD-001-0;
+Parceiro 1.1;COD-001-1;Parceiro 1
+Parceiro 2;COD-002-0;
+Parceiro 2.1;COD-002-1;Parceiro 2
+Parceiro 3;COD-003-0;
+Parceiro 4;COD-004-0;
+Parceiro 5;COD-005-0;
+Parceiro 5.1;COD-005-1;Parceiro 5
+Parceiro 5.2;COD-005-2;Parceiro 5
+Parceiro 5.3;COD-005-3;Parceiro 5
+Parceiro 5.3.1;COD-005-3-1;Parceiro 5.3
+Parceiro 5.3.1.1;COD-005-3-1-1;Parceiro 5.3.1
+Parceiro 5.3.1.2;COD-005-3-1-2;Parceiro 5.3.1

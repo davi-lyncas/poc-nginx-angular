@@ -1,0 +1,10 @@
+DescricaoLista;ListaPai;DescricaoItem;ValorListaPai
+Estados;;Pará;
+Cidades;Estados;Belem;Pará
+Cidades;Estados;Santarém;Pará
+Estados;;Rio Grande do Sul;
+Cidades;Estados;Porto Alegre;Rio Grande do Sul
+Cidades;Estados;Pelotas;Rio Grande do Sul
+Estados;;Santa Catarina;
+Cidades;Estados;Tubarão;Santa Catarina
+Cidades;Estados;Jaraguá do Sul;Santa Catarina

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
 import { HttpHelperService } from '../http/http-helper.service';
 
 @Injectable({
@@ -10,7 +9,7 @@ export class AuthenticationService {
   private url: string;
 
   constructor(private http: HttpHelperService) {
-    this.url = environment.api_path;
+    this.url = 'auth';
   }
 
   getRefreshToken(refreshToken: string): Promise<unknown> {
@@ -35,7 +34,7 @@ export class AuthenticationService {
   }
 
   signInAnotherCustomer(login: string, clienteId: number): Promise<unknown> {
-    return this.http.get(`${this.url}/signInAnotherCustomer`, {
+    return this.http.post(`${this.url}/signInAnotherCustomer`, {
       params: { login: login, clienteId: clienteId }
     });
   }

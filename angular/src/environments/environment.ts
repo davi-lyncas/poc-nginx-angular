@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  api_path: ''
+  api_path: 'http://localhost:63049',
+  classic_app: 'https://backoffice-homolog.eboxdigital.com.br'
 };
 
 /*
