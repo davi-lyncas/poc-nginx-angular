@@ -7,17 +7,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { AdministracaoComponent } from './pages/administracao/administracao.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    SidenavComponent
+    AdministracaoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    SidenavComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

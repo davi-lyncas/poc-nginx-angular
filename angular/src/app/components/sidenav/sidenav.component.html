@@ -1,98 +1,116 @@
-<div class="md-skin navbar">
-    <div class="navbar-default navbar-static-side ng-scope">
-        <ul class="nav metismenu" id="side-menu">
+<div class="sidenav">
+    <div>
+        <ul class="nav" id="side-menu">
             <li class="nav-header">
-                <div class="profile-element">
-                    <span class="label label-info pull-right ng-binding">homolog</span>
+                <div>
+                    <span class="label label-info pull-right">homolog</span>
                     <a href="">
                         <div class="main-logo"></div>
                     </a>
-                    <span class="block m-t-xs">
-                        <strong class="font-bold text-white ng-binding">Davi Wollmann</strong>
-                        <a class="m-l-xs" (click)="classic('preferencias')">
+                    <span *ngIf="user?.name">
+                        <span>{{user.name}}</span>
+                        <a (click)="navigate('preferencias')">
+                            &nbsp;
                             <i class="fa fa-cog"></i>
+                            
                         </a>
                     </span>
-                    <span class="block text-white">
-                        <small class="ng-binding">davi.s@lyncas.net</small>
+                    <br>
+                    <span *ngIf="user?.email">
+                        <small>{{user.email}}</small>
                     </span>
                 </div>
             </li>
             <li class="active">
-                <a (click)="classic('inicio')">
+                <a (click)="navigate('inicio')">
                     <i class="fa fa-home"></i>
+                    &nbsp;
                     <span class="nav-label">Início</span>
                 </a>
             </li>
-            <li class="ng-isolate-scope">
-                <a (click)="classic('administracao')">
+            <li *hasRole="'administracao'">
+                <a (click)="navigate('administracao')">
                     <i class="fa fa-cogs"></i>
+                    &nbsp;
                     <span class="nav-label">Administração</span>
                 </a>
             </li>
-            <li class="ng-isolate-scope">
-                <a (click)="classic('atendimento')">
+            <li>
+                <a (click)="navigate('atendimento')">
                     <i class="fa fa-truck"></i>
+                    &nbsp;
                     <span class="nav-label">Atendimento</span>
                 </a>
             </li>
-            <li class="ng-isolate-scope">
-                <a (click)="classic('comercial')">
+            <li>
+                <a (click)="navigate('comercial')">
                     <i class="fa fa-briefcase"></i>
+                    &nbsp;
                     <span class="nav-label">Comercial</span>
                 </a>
             </li>
-            <li class="ng-isolate-scope">
-                <a (click)="classic('financeiro')">
+            <li>
+                <a (click)="navigate('financeiro')">
                     <i class="fa fa-line-chart"></i>
+                    &nbsp;
                     <span class="nav-label">Financeiro</span>
                 </a>
             </li>
-            <li class="ng-isolate-scope">
-                <a (click)="classic('galpao')">
+            <li>
+                <a (click)="navigate('galpao')">
                     <i class="fa fa-cubes"></i>
+                    &nbsp;
                     <span class="nav-label">Galpão</span>
                 </a>
             </li>
-            <li class="ng-isolate-scope">
-                <a (click)="classic('marketing')">
+            <li>
+                <a (click)="navigate('marketing')">
                     <i class="fa fa-rss"></i>
+                    &nbsp;
                     <span class="nav-label">Marketing</span>
                 </a>
             </li>
-            <li class="ng-isolate-scope">
-                <a (click)="classic('operacao')">
+            <li>
+                <a (click)="navigate('operacao')">
                     <i class="fa fa-puzzle-piece"></i>
+                    &nbsp;
                     <span class="nav-label">Operação</span>
                 </a>
             </li>
-            <li class="ng-isolate-scope">
-                <a (click)="classic('projetos')">
+            <li>
+                <a (click)="navigate('projetos')">
                     <i class="fa fa-folder-open"></i>
+                    &nbsp;
                     <span class="nav-label">Projetos</span>
                 </a>
             </li>
-            <li class="ng-isolate-scope" style="display: none;">
-                <a (click)="classic('relatorios')">
+            <li style="display: none;">
+                <a (click)="navigate('relatorios')">
                     <i class="fa fa-print"></i>
+                    &nbsp;
                     <span class="nav-label">Relatórios</span>
                 </a>
             </li>
-            <li class="ng-isolate-scope">
-                <a  (click)="classic('seguranca-informacao')">
-                    <i class="fa fa-shield"></i>
-                    <span class="nav-label">Segurança da Informação</span>
+            <li>
+                <a (click)="navigate('seguranca-informacao')">
+                    <div>
+                        <i class="fa fa-shield"></i>
+                        &nbsp;
+                        <span class="nav-label">Segurança da Informação</span>
+                    </div>
                 </a>
             </li>
-            <li class="ng-isolate-scope">
-                <a (click)="classic('sustentacao')">
+            <li>
+                <a (click)="navigate('sustentacao')">
                     <i class="fa fa-cogs"></i>
+                    &nbsp;
                     <span class="nav-label">Sustentação</span>
                 </a>
             </li>
         </ul>
     </div>
     <div class="content">
+        <app-navbar></app-navbar>
         <router-outlet></router-outlet>
     </div>
 </div>
