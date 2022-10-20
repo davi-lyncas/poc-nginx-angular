@@ -8,7 +8,7 @@ import { HttpHelperService } from 'src/app/services/http/http-helper.service';
   styleUrls: ['./home.component.less'],
   standalone: true
 })
-export class HomeComponent implements OnInit {
+export class InicioComponent implements OnInit {
 
   user = { nome: '' }
   posts: Array<{

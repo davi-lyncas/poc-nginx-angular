@@ -3,12 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { 
-    path: 'home',
+    path: 'inicio',
     title: 'Início',
     data: { description: 'Início' },
     loadComponent:
-      () => import('./pages/home/home.component')
-        .then(c => c.HomeComponent),
+      () => import('./pages/inicio/inicio.component')
+        .then(c => c.InicioComponent),
   },
   {
     path: 'administracao',
@@ -17,6 +17,11 @@ const routes: Routes = [
     loadComponent: 
       () => import('./pages/administracao/administracao.component')
         .then(c => c.AdministracaoComponent),
+  },
+  {
+    path: '',
+    redirectTo: 'inicio',
+    pathMatch: 'full'
   },
   { //Fallback to classic app when route doesn't exists or wasn't migrated yet
     path: '**',
