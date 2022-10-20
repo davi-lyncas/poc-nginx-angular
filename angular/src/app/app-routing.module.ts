@@ -1,11 +1,29 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdministracaoComponent } from './pages/administracao/administracao.component';
-import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent, title: 'Início', data: {description: 'Início'} },
-  { path: 'administracao', component: AdministracaoComponent, title: 'Administração', data: {description: 'Administração'} }
+  { 
+    path: 'home',
+    title: 'Início',
+    data: { description: 'Início' },
+    loadComponent:
+      () => import('./pages/home/home.component')
+        .then(c => c.HomeComponent),
+  },
+  {
+    path: 'administracao',
+    title: 'Administração',
+    data: { description: 'Administração' },
+    loadComponent: 
+      () => import('./pages/administracao/administracao.component')
+        .then(c => c.AdministracaoComponent),
+  },
+  { //Fallback to classic app when route doesn't exists or wasn't migrated yet
+    path: '**',
+    loadComponent:
+      () => import('./components/classic-app/classic-app.component')
+        .then(c => c.ClassicAppComponent)
+  }
 ];
 
 @NgModule({

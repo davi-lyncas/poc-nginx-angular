@@ -4,15 +4,14 @@ import { Router, RouterOutlet } from '@angular/router';
 import { HasRoleDirective } from 'src/app/directives/roles/has-role.directive';
 import { UserService } from 'src/app/services/user/user.service';
 import { UserInfo } from 'src/app/types/user-types';
-import { environment } from 'src/environments/environment';
 import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.less'],
+  imports: [CommonModule, NavbarComponent, RouterOutlet, HasRoleDirective],
   standalone: true,
-  imports: [CommonModule, NavbarComponent, RouterOutlet, HasRoleDirective]
 })
 export class SidenavComponent implements OnInit {
 
@@ -27,10 +26,5 @@ export class SidenavComponent implements OnInit {
 
   navigate(url: string) {
     this.router.navigateByUrl(url)
-      .then(success => {
-        if (!success) location.href = environment.classic_app + '/' + url;
-      })
-      .catch(_=> location.href = environment.classic_app + '/' + url);
   }
-
 }

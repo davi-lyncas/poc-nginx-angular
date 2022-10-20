@@ -5,7 +5,8 @@ import { HttpHelperService } from 'src/app/services/http/http-helper.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.less']
+  styleUrls: ['./home.component.less'],
+  standalone: true
 })
 export class HomeComponent implements OnInit {
 
