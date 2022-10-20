@@ -2,7 +2,82 @@
     <a class="btn" href="" (click)="minimalize()">
         <i class="sidenav-collapse fa fa-bars"></i>
     </a>
+    <div class="spacer"></div>
+    <button class="btn-transparent" (click)="toggleMenu()" (blur)="toggleMenu()">
+        <app-avatar></app-avatar>
+    </button>
+    <div class="margin"></div>
 </nav>
+<div *ngIf="showMenu" class="menu">
+    <ul>
+        <li>
+            <a href="">
+                <div class="item">
+                    <i class="fa fa-user"></i>
+                    &nbsp;
+                    Preferências
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="item">
+                    <i class="fa fa-key"></i>
+                    &nbsp;
+                    Alterar Senha
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="item">
+                    <i class="fa fa-envelope-o"></i>
+                    &nbsp;
+                    Assinatura de E-mail
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="item">
+                    <i class="fa fa-download"></i>
+                    &nbsp;
+                    Downloads
+                </div>
+            </a>
+        </li>
+        <li class="divider"></li>
+        <li>
+            <a href="">
+                <div class="item">
+                    <i class="fa fa-life-ring"></i>
+                    &nbsp;
+                    Abrir Chamado
+                </div>
+            </a>
+        </li>
+        <li class="divider"></li>
+        <li>
+            <a href="">
+                <div class="item">
+                    <i class="fa fa-cloud-download"></i>
+                    &nbsp;
+                    Baixar Backoffice
+                </div>
+            </a>
+        </li>
+        <li class="divider"></li>
+        <li>
+            <a href="">
+                <div class="item">
+                    <i class="fa fa-sign-out"></i>
+                    &nbsp;
+                    Sair
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
 <div class="details">
     {{pageDescription}}
 </div>
