@@ -6,6 +6,8 @@ import { UserInfo } from 'src/app/types/user-types';
 })
 export class UserService {
 
+  get userId () { return 1 }
+
   constructor() { }
 
   async getUserInfo(): Promise<UserInfo> {

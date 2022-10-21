@@ -1,5 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { HttpHelperService } from 'src/app/services/http/http-helper.service';
+import { UserService } from 'src/app/services/user/user.service';
+
+const EMPTY = '../../../assets/profile_200x200.png';
 
 @Component({
   selector: 'app-avatar',
@@ -10,13 +14,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AvatarComponent implements OnInit {
 
-  avatarSouce!: string;
+  avatarSouce = EMPTY;
 
-  constructor() { }
+  constructor(private http: HttpHelperService, private user: UserService) { }
 
   ngOnInit(): void {
-    //load avatar here!
-    this.avatarSouce = '../../../assets/profile_200x200.png';
+    this.getAvatarUri()
+      .then(avatar => this.avatarSouce = avatar);
   }
 
+  async getAvatarUri(): Promise<string> {
+    const usuarioId = this.user.userId;
+    const avatar = await this.http.get<string>('getAvatarUri', { params: { usuarioId } });
+    return avatar ? avatar : EMPTY ;
+  }
 }

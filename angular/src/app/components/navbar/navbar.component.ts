@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRouteSnapshot, NavigationStart, Router } from '@angular/router';
+import { NavigationStart, Router } from '@angular/router';
 import { AvatarComponent } from '../avatar/avatar.component';
+import { SidenavComponent } from '../sidenav/sidenav.component';
 
 @Component({
   selector: 'app-navbar',
@@ -14,28 +15,26 @@ export class NavbarComponent implements OnInit {
 
   pageDescription: string = 'Início';
   showMenu = false;
+  showSidenav = true;
 
   constructor(private router: Router) { }
 
   ngOnInit() {
-    this.setPageDetails();
+    // this.setPageDetails();
   
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
-        this.setPageDetails();
+        // this.setPageDetails();
       }
     });
-  }
-
-  minimalize() {
-    
   }
 
   toggleMenu() {
     this.showMenu = !this.showMenu;
   }
 
-  private setPageDetails() {
+  toggleSideNav() {
+    this.showSidenav = !this.showSidenav;
+    SidenavComponent.sidenavController(this.showSidenav);
   }
-
 }
