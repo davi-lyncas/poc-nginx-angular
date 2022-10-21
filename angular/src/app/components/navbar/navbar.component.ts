@@ -35,6 +35,6 @@ export class NavbarComponent implements OnInit {
 
   toggleSideNav() {
     this.showSidenav = !this.showSidenav;
-    SidenavComponent.sidenavController(this.showSidenav);
+    SidenavComponent.visible = this.showSidenav;
   }
 }

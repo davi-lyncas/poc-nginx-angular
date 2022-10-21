@@ -20,8 +20,8 @@ export class SidenavComponent implements OnInit {
   protected show = true;
   private static sidenav = new Subject<boolean>();
 
-  public static get sidenavController () {
-    return (show: boolean) => this.sidenav.next(show);
+  public static set visible (visibility: boolean) {
+    this.sidenav.next(visibility);
   }
 
   constructor(private router: Router, private userService: UserService) { }
