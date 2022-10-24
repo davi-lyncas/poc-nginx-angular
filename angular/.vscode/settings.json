@@ -1,4 +1,5 @@
 {
     "editor.lineNumbers": "on",
-    "zenMode.hideLineNumbers": false
+    "zenMode.hideLineNumbers": false,
+    "zenMode.silentNotifications": false
 }
