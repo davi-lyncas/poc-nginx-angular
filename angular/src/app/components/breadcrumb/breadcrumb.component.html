@@ -1,0 +1,11 @@
+<div class="breadcrumb">
+    <div *ngFor="let crumb of crumbs" class="crumb">
+        <span (click)="navigate(crumb)" class="crumb-action">
+            {{crumb}}
+        </span>
+        <span *ngIf="crumbs[crumbs.length-1] != crumb" class="separator">
+        <!-- SE NÃO FOR O ULTIMO ITEM DO CAMINHO ADICIONA O SEPARADOR DE '/' -->
+            /
+        </span>
+    </div>
+</div>

@@ -10,7 +10,7 @@ export class AdministracaoComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }

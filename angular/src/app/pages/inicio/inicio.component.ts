@@ -3,9 +3,9 @@ import { AuthenticationService } from 'src/app/services/auth/authentication.serv
 import { HttpHelperService } from 'src/app/services/http/http-helper.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.less'],
+  selector: 'app-inicio',
+  templateUrl: './inicio.component.html',
+  styleUrls: ['./inicio.component.less'],
   standalone: true
 })
 export class InicioComponent implements OnInit {
@@ -22,7 +22,7 @@ export class InicioComponent implements OnInit {
 
   constructor(private http: HttpHelperService, private auth: AuthenticationService) { }
 
-  ngOnInit(): void { }
+  ngOnInit() { }
 
   testeApi() {
     this.auth.signInAnotherCustomer('dev@eboxdigital.com.br', 0)

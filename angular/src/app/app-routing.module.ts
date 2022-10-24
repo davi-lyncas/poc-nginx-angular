@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, UrlSerializer } from '@angular/router';
+import { Serializer } from './services/routing/serializer.service';
 
 const routes: Routes = [
   { 
@@ -19,6 +20,19 @@ const routes: Routes = [
         .then(c => c.AdministracaoComponent),
   },
   {
+    path: 'administracao',
+    children: [
+      {
+        path: 'teste',
+        title: 'teste',
+        data: { description: 'teste' },
+        loadComponent: 
+          () => import('./pages/inicio/inicio.component')
+            .then(c => c.InicioComponent),
+      }
+    ],
+  },
+  {
     path: '',
     redirectTo: 'inicio',
     pathMatch: 'full'
@@ -33,6 +47,12 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [
+    {
+      provide: UrlSerializer,
+      useClass: Serializer
+    },
+  ]
 })
 export class AppRoutingModule { }

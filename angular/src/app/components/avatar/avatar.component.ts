@@ -18,14 +18,18 @@ export class AvatarComponent implements OnInit {
 
   constructor(private http: HttpHelperService, private user: UserService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.avatarSouce = localStorage.getItem('ebox.avatar') ?? '';
+    if (!this.avatarSouce) return;
+
     this.getAvatarUri()
-      .then(avatar => this.avatarSouce = avatar);
+      .then(avatar => this.avatarSouce = avatar)
+      .catch(e => console.error(e));
   }
 
   async getAvatarUri(): Promise<string> {
     const usuarioId = this.user.userId;
     const avatar = await this.http.get<string>('getAvatarUri', { params: { usuarioId } });
-    return avatar ? avatar : EMPTY ;
+    return avatar ? avatar : EMPTY;
   }
 }
