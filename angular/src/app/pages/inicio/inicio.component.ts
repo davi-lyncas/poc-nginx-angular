@@ -18,7 +18,7 @@ export class InicioComponent implements OnInit {
     slug: string,
     storageImageUrl: string,
     categoryName: string
-  }> = []
+  }> = [];
 
   constructor(private http: HttpHelperService, private auth: AuthenticationService) { }
 
@@ -27,11 +27,11 @@ export class InicioComponent implements OnInit {
   testeApi() {
     this.auth.signInAnotherCustomer('dev@eboxdigital.com.br', 0)
       .then(r => console.log(r))
-        .catch(e => console.log(e))
+        .catch(e => console.log(e));
 
     this.http.get("ping")
       .then(r => console.log(r))
-        .catch(e => console.log(e))
+        .catch(e => console.log(e));
   }
 
 }

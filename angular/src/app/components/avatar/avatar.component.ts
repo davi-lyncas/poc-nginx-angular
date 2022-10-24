@@ -19,7 +19,7 @@ export class AvatarComponent implements OnInit {
   constructor(private http: HttpHelperService, private user: UserService) { }
 
   ngOnInit() {
-    this.avatarSouce = localStorage.getItem('ebox.avatar') ?? '';
+    this.avatarSouce = localStorage.getItem('avatar') ?? '';
     if (!this.avatarSouce) return;
 
     this.getAvatarUri()

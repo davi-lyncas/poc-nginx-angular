@@ -20,19 +20,6 @@ const routes: Routes = [
         .then(c => c.AdministracaoComponent),
   },
   {
-    path: 'administracao',
-    children: [
-      {
-        path: 'teste',
-        title: 'teste',
-        data: { description: 'teste' },
-        loadComponent: 
-          () => import('./pages/inicio/inicio.component')
-            .then(c => c.InicioComponent),
-      }
-    ],
-  },
-  {
     path: '',
     redirectTo: 'inicio',
     pathMatch: 'full'

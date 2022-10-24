@@ -5,7 +5,9 @@
 export const environment = {
   production: false,
   api_path: 'http://localhost:63049',
-  classic_app: 'https://backoffice-homolog.eboxdigital.com.br'
+  classic_app: 'https://backoffice-homolog.eboxdigital.com.br',
+  storage_prefix: 'ebox',
+  storage_encryption_key: '8z3FbLCkbUWfCPraVftpug'
 };
 
 /*
